@@ -7,12 +7,15 @@ En el mismo se toma una señal de ECG almacenada en memoria y se la utiliza para
 ## Cómo usar el ejemplo
 
 ### Hardware requerido
+
 * ESP-EDU
 
 ### Configurar el proyecto
+
 Para utilziar las funcionalidades de DSP es necesario agregar la capa middelware al proyecto, modificando el archivo CMakeLists.txt (ubicado en la raiz del proyecto) con el siguiente contenido:
-```
- cmake_minimum_required(VERSION 3.16)
+
+```cmake
+cmake_minimum_required(VERSION 3.16)
 
 list(APPEND EXTRA_COMPONENT_DIRS "../../drivers")
 list(APPEND EXTRA_COMPONENT_DIRS "../../middelware")
@@ -22,12 +25,18 @@ include_directories(${PROJECT_NAME} ../../middelware)
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 project(ej_dsp)
 ```
+
 En este proyecto ya ha sido agregado, por lo tanto no es necesaria ninguna acción extra para probarlo.
- 
+
 ### Ejecutar la aplicación
-1. Luego de grabar la placa, correr el `ESP-IDF. monitor Device`: ![](https://raw.githubusercontent.com/microsoft/vscode-icons/2ca0f3225c1ecd16537107f60f109317fcfc3eb0/icons/dark/vm.svg)
+
+1. Luego de grabar la placa, correr el `ESP-IDF. monitor Device`: ![monitor](https://raw.githubusercontent.com/microsoft/vscode-icons/2ca0f3225c1ecd16537107f60f109317fcfc3eb0/icons/dark/vm.svg)
 2. Se podrá observar una salida con los valores de ECG filtrado y su FFT, como se muestra a continuación:
-```
+
+```PowerShell
+.
+.
+.
 ****Filtros****
 ECG, ECG_filtrado
 76.000000, 3.398153
@@ -57,5 +66,4 @@ ECG, ECG_filtrado
 .
 .
 .
-
 ```
