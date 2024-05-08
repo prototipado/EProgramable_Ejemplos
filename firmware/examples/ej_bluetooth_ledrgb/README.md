@@ -28,7 +28,7 @@ En este proyecto ya se han realizado estas modificaciones, por lo tanto no es ne
 
 ### Ejecutar la aplicación
 
-1. Instalar y ejecutar en el dispositivo Android la aplicación [Bluettoth Electronics](https://play.google.com/store/apps/details?id=com.keuwl.arduinobluetooth)
+1. Instalar y ejecutar en el dispositivo Android la aplicación [Bluetooth Electronics](https://play.google.com/store/apps/details?id=com.keuwl.arduinobluetooth)
 2. Presionando en el botón `Connect`, vincular el móvil con la placa (se mostrará con el nombre `ESP_EDU_1`)
 3. Seleccionar y ejecutar el ejemplo `Led Brightness Controller`
 

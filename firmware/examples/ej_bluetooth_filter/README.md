@@ -42,7 +42,7 @@ En este proyecto ya se han realizado estas modificaciones, por lo tanto no es ne
 
 ### Ejecutar la aplicación
 
-1. Instalar y ejecutar en el dispositivo Android la aplicación [Bluettoth Electronics](https://play.google.com/store/apps/details?id=com.keuwl.arduinobluetooth)
+1. Instalar y ejecutar en el dispositivo Android la aplicación [Bluetooth Electronics](https://play.google.com/store/apps/details?id=com.keuwl.arduinobluetooth)
 2. Presionando en el botón `Connect`, vincular el móvil con la placa (se mostrará con el nombre `ESP_EDU_1`)
 3. Crear un nuevo Panel que contenga un Gráfico "Roll" (menú `Graphs`) y un switch (menú `Switches`) que envíe una "A" cuando esté en "ON" y una "a" cuando esté en "OFF".
 ![app1](BLE_Filter_1.jpg)
