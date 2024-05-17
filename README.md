@@ -11,8 +11,9 @@ Los mismos están pensado para ser utilizados con la placa ESP-EDU, una placa di
 * [Bluetooth + LCD RGB](./firmware/examples/ej_bluetooth_ledrgb/README.md)
 * [Bluetooth + FFT](./firmware/examples/ej_bluetooth_fft/README.md)
 * [Bluetooth + Filtrado](./firmware/examples/ej_bluetooth_filter/README.md)
-* [Display LCD color: ECG](./firmware/examples/ej_lcdcolor_ecg/README.md) 
-* [Display LCD color: Reproductor de audio](./firmware/examples/ej_lcdcolor_audioplayer/README.md) 
+* [Display LCD color: ECG](./firmware/examples/ej_lcdcolor_ecg/README.md)
+* [Display LCD color: Reproductor de audio](./firmware/examples/ej_lcdcolor_audioplayer/README.md)
+* [Mouse y Teclado Bluetooth](./firmware/examples/ej_bluetooth_mouse_kb/README.md)
 
 ## Autores
 
