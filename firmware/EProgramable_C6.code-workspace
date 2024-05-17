@@ -23,6 +23,9 @@
         },
         {
             "path": "examples/ej_lcdcolor_audioplayer"
+        },
+        {
+            "path": "examples/ej_bluetooth_mouse_kb"
         }
     ],
     "settings": {
