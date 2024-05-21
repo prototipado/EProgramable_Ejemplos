@@ -3,9 +3,9 @@
  * @author Juan Cerrudo (juan.cerrudo@uner.edu.ar)
  * @brief 
  * @version 0.1
- * @date 2024-01-30
+ * @date 2023-10-20
  * 
- * @copyright Copyright (c) 2024
+ * @copyright Copyright (c) 2023
  * 
  */
 
@@ -132,7 +132,33 @@ int8_t I2C_readBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8_t *
 	ESP_ERROR_CHECK(i2c_master_write_byte(cmd, (devAddr << 1) | I2C_MASTER_READ, 1));
 
 	if(length>1)
-	ESP_ERROR_CHECK(i2c_master_read(cmd, data, length-1, I2C_MASTER_ACK));
+		ESP_ERROR_CHECK(i2c_master_read(cmd, data, length-1, I2C_MASTER_ACK));
+
+	ESP_ERROR_CHECK(i2c_master_read_byte(cmd, data+length-1, I2C_MASTER_NACK));
+
+	ESP_ERROR_CHECK(i2c_master_stop(cmd));
+	ESP_ERROR_CHECK(i2c_master_cmd_begin(I2C_NUM, cmd, 1000/portTICK_PERIOD_MS));
+	i2c_cmd_link_delete(cmd);
+
+	return length;
+}
+
+/** Read multiple bytes from an 8-bit device register.
+ * @param devAddr I2C slave device address
+ * @param length Number of bytes to read
+ * @param data Buffer to store read data in
+ * @param timeout Optional read timeout in milliseconds (0 to disable, leave off to use default class value in I2C_readTimeout)
+ * @return I2C_TransferReturn_TypeDef http://downloads.energymicro.com/documentation/doxygen/group__I2C.html
+ */
+int8_t I2C_requestBytes(uint8_t devAddr, uint8_t length, uint8_t *data, uint16_t timeout) {
+	i2c_cmd_handle_t cmd;
+
+	cmd = i2c_cmd_link_create();
+	ESP_ERROR_CHECK(i2c_master_start(cmd));
+	ESP_ERROR_CHECK(i2c_master_write_byte(cmd, (devAddr << 1) | I2C_MASTER_READ, 1));
+
+	if(length>1)
+		ESP_ERROR_CHECK(i2c_master_read(cmd, data, length-1, I2C_MASTER_ACK));
 
 	ESP_ERROR_CHECK(i2c_master_read_byte(cmd, data+length-1, I2C_MASTER_NACK));
 
@@ -248,6 +274,18 @@ bool I2C_writeBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8_t *d
 	return true;
 }
 
+bool I2C_writeREG(uint8_t devAddr, uint8_t regAddr){
+	i2c_cmd_handle_t cmd;
+
+	cmd = i2c_cmd_link_create();
+	ESP_ERROR_CHECK(i2c_master_start(cmd));
+	ESP_ERROR_CHECK(i2c_master_write_byte(cmd, (devAddr << 1) | I2C_MASTER_WRITE, 1));
+	ESP_ERROR_CHECK(i2c_master_write_byte(cmd, regAddr, 1));
+	ESP_ERROR_CHECK(i2c_master_stop(cmd));
+	i2c_master_cmd_begin(I2C_NUM, cmd, 1000/portTICK_PERIOD_MS);
+	i2c_cmd_link_delete(cmd);
+	return true;
+}
 
 /**
  * read word
@@ -263,5 +301,3 @@ int8_t I2C_readWord(uint8_t devAddr, uint8_t regAddr, uint16_t *data, uint16_t t
 	*data = (int16_t)((msb[0] << 8) | msb[1]);
 	return 0;
 }
-
-/*==================[end of file]============================================*/
