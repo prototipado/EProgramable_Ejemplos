@@ -26,6 +26,12 @@
         },
         {
             "path": "examples/ej_bluetooth_mouse_kb"
+        },
+        {
+            "path": "examples/ej_max3010x"
+        },
+        {
+            "path": "examples/ej_mfrc522"
         }
     ],
     "settings": {
@@ -86,7 +92,8 @@
             "time.h": "c",
             "vumeter.h": "c",
             "rtc_mcu.h": "c",
-            "fft.h": "c"
+            "fft.h": "c",
+            "i2c.h": "c"
         },
     },
     "tasks": {

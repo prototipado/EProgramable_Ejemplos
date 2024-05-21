@@ -14,6 +14,8 @@ Los mismos están pensado para ser utilizados con la placa ESP-EDU, una placa di
 * [Display LCD color: ECG](./firmware/examples/ej_lcdcolor_ecg/README.md)
 * [Display LCD color: Reproductor de audio](./firmware/examples/ej_lcdcolor_audioplayer/README.md)
 * [Mouse y Teclado Bluetooth](./firmware/examples/ej_bluetooth_mouse_kb/README.md)
+* [SPO2 + Frec. Card. (MAX3010X)](./firmware/examples/ej_max3010x/README.md)
+* [Lector RFID (MFRC522)](./firmware/examples/ej_mfrc522/README.md)
 
 ## Autores
 
