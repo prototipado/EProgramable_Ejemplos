@@ -1,5 +1,12 @@
+<p align="center">
+<img src="fiuner.png">
+<br>
+<img alt="GitHub forks" src="https://img.shields.io/github/forks/prototipado/EProgramable_Ejemplos?style=flat&logo=github">
+<img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/t/prototipado/EProgramable_Ejemplos?style=flat&logo=github">
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/prototipado/EProgramable_Ejemplos?style=flat&logo=github">
+<img alt="GitHub last commit" src="https://img.shields.io/github/repo-size/prototipado/EProgramable_Ejemplos?style=flat&logo=github">
+</p>
 
-![Scheme|30%](fiuner.png)
 # Cátedra: Electrónica Programable
 
 En este Repositorio se almacenan programas que ejemplifican el uso de distintos módulos y drivers creados por la cátedra para el manejo de periféricos del microcontrolador y dispositivos externos.
